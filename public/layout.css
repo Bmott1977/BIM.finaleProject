@@ -1,0 +1,23 @@
+.leftside{
+    float: left;
+    width: 150px;
+    
+}
+.main{
+    float: right;
+    width: 800px;
+}
+.form{
+    float: left;
+    width: 490px;
+    font: .8em;
+}
+.foot{
+    height: 250px;
+    
+}
+.text{
+    float: right;
+    width: 350px;
+    padding-top: 55px;
+}
