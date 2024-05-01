@@ -1,0 +1,40 @@
+
+### Variables
+
+@port = 3000
+
+@menuid = 
+
+@eventid =
+
+### GET Menu
+
+GET http//localhost:{{port}}/api/menu
+
+### Create a Menu Item
+
+POST http//localhost:{{port}}/api/menu
+
+### Update menu item
+
+PUT http//localhost:{{port}}/api/menu/:{{menuid}}
+
+### Delete menu item
+
+DELETE http//localhost:{{port}}/api/menu/:{{menuid}}
+
+### GET Events
+
+GET http//localhost:{{port}}/api/events
+
+### GET Event by ID
+
+GET http//localhost:{{port}}/api/events/:{{eventid}}
+
+### Create a Event 
+
+POST http//localhost:{{port}}/api/events
+
+### Delete an Event
+
+DELETE http//localhost:{{port}}/api/events/:{{eventid}}
