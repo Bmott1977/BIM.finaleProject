@@ -17,7 +17,7 @@ const menuFoods = [{
 
 //Modify when database is ready
 const generateMenu = ({name, price, description}) => {
-    const ul = document.querySelector('ul')
+    const ul = document.querySelector(' div .javamenu ul')
     const li = document.createElement('li')
     const h3 = document.createElement('h3')
     const h4 = document.createElement('h4')
