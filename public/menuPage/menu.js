@@ -1,6 +1,6 @@
 
 
-// Delete when database is ready
+// commit out when database is ready
 const menuFoods = [{
     "name": "Hot Dog",
     "price": "$1",
@@ -15,27 +15,43 @@ const menuFoods = [{
     "description": "Bla"
 }]
 
-//Modify when database is ready
-const generateMenu = ({name, price, description}) => {
-    const ul = document.querySelector(' div .javamenu ul')
-    const li = document.createElement('li')
-    const h3 = document.createElement('h3')
-    const h4 = document.createElement('h4')
-    const p = document.createElement('p')
-    const br = document.createElement('br')
-    const names = `${name}`
-    const prices = `${price}`
-    const descriptions = `${description}`
-    ul.append(li)
-    li.append(h3)
-    li.append(h4)
-    li.append(br)
-    li.append(p)
-    li.append(br)
-    h3.textContent = names
-    h4.textContent = prices
-    p.textContent = descriptions
+// commit out when fetch is working
+const fakefetch = (url) => {
+    if (url === '/api/menu') {
+        return menuFoods
+    }
 }
 
+//Modify when database is ready
+const generateMenu = async () => {
+    const response = await fakefetch('/api/menu')
+    const {name, price, description} = await response//.json()
 
-for (let i = 0; i < menuFoods.length; i++) {generateMenu(menuFoods[i])}
+    response.forEach(({name, price, description}) => {
+
+        const ul = document.querySelector(' div .javamenu ul')
+        const li = document.createElement('li')
+        const h3 = document.createElement('h3')
+        const h4 = document.createElement('h4')
+        const p = document.createElement('p')
+        const br = document.createElement('br')
+
+        ul.append(li)
+        li.append(h3)
+        li.append(h4)
+        li.append(br)
+        li.append(p)
+        li.append(br)
+
+        h3.textContent = name
+        h4.textContent = price
+        p.textContent = description
+
+    })
+
+    
+}
+
+generateMenu()
+
+//or (let i = 0; i < menuFoods.length; i++) {generateMenu(menuFoods[i])}
