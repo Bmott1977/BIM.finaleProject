@@ -1,7 +1,9 @@
-const router = require('express').Router()
+const express = require('express')
 const { MongoClient, ObjectId } = require('mongodb')
 
-const url = process.env.MONGODB_URI || require('../secret/mongodb.json').url
+const router = express.Router()
+
+const { url } = process.env.MONGODB_URL || require('../secret/mongodb.json')
 const client = new MongoClient(url)
 
 const getCollection = async (dbName, collectionName) => {
@@ -11,28 +13,29 @@ const getCollection = async (dbName, collectionName) => {
 
 // GET /api/menu id, name, description
 
-router.get('/api/menu', async (request, response) => {
+router.get('/menu', async (request, response) => {
 	const collection = await getCollection('foodTruck-api', 'menu')
+	console.log(collection)
 	const menu = await collection.find().toArray()
-	response.send(menu)
+	response.json(menu)
 })
 
 // POST /api/menu name, description, price
 
-router.post('/api/menu', async (request, response) => {
+router.post('/menu', async (request, response) => {
 	const{ body } = request
 	const { name, description, price } = body
 	const menu = { name, description, price }
 
 	const collection = await getCollection('foodTruck-api', 'menu')
 	const result = await collection.insertOne(menu)
-	response.send(result)
+	response.json(result)
 })
 
 
 // PUT /api/menu/:id name, description, price
 
-router.put('/api/menu/:id', async (request, response) => {
+router.put('/menu/:id', async (request, response) => {
 	const{ body, params } = request
 	const { id } = params
 	const { name, description, price } = body
@@ -40,51 +43,51 @@ router.put('/api/menu/:id', async (request, response) => {
 
 	const collection = await getCollection('foodTruck-api', 'menu')
 	const result = await collection.updateOne({ _id: new ObjectId(id) }, { $set: menu })
-	response.send(result)
+	response.json(result)
 })
 
 // DELETE /api/menu/:id
 
-router.delete('/api/menu/:id', async (request, response) => {
+router.delete('/menu/:id', async (request, response) => {
 	const { id } = request.params
 	const collection = await getCollection('foodTruck-api', 'menu')
 	const result = await collection.deleteOne({ _id: new ObjectId(id) })
-	response.send(result)
+	response.json(result)
 })
 
 // GET /api/events id, name
 
-router.get('/api/events', async (request, response) => {
+router.get('/events', async (request, response) => {
 	const collection = await getCollection('foodTruck-api', 'events')
 	const events = await collection.find().toArray()
-	response.send(events)
+	response.json(events)
 })
 
 // GET /api/events/:id name, location, dates, hours
 
-router.get('/api/events/:id', async (request, response) => {
+router.get('/events/:id', async (request, response) => {
 	const { id, location, dates, hours } = request.params
 	const collection = await getCollection('foodTruck-api', 'events')
 	const event = await collection.findOne({ _id: new ObjectId(id) })
-	response.send(event)
+	response.json(event)
 })
 
 
 // POST /api/events name, location, dates, hours
 
-router.post('/api/events', async (request, response) => {
+router.post('/events', async (request, response) => {
 	const{ body } = request
 	const { name, location, dates, hours } = body
 	const event = { name, location, dates, hours }
 
 	const collection = await getCollection('foodTruck-api', 'events')
 	const result = await collection.insertOne(event)
-	response.send(result)
+	response.json(result)
 })
 
 // PUT /api/events/:id name, location, dates, hours
 
-router.put('/api/events/:id', async (request, response) => {
+router.put('/events/:id', async (request, response) => {
 	const{ body, params } = request
 	const { id } = params
 	const { name, location, dates, hours } = body
@@ -92,16 +95,16 @@ router.put('/api/events/:id', async (request, response) => {
 
 	const collection = await getCollection('foodTruck-api', 'events')
 	const result = await collection.updateOne({ _id: new ObjectId(id) }, { $set: event })
-	response.send(result)
+	response.json(result)
 })
 
 // DELETE /api/events/:id
 
-router.delete('/api/events/:id', async (request, response) => {
+router.delete('/events/:id', async (request, response) => {
 	const { id } = request.params
 	const collection = await getCollection('foodTruck-api', 'events')
 	const result = await collection.deleteOne({ _id: new ObjectId(id) })
-	response.send(result)
+	response.json(result)
 })
 
 module.exports = router

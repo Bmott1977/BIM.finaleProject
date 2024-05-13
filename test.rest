@@ -1,40 +1,71 @@
 
 ### Variables
 
-@port = 3000
+@url = http://localhost:3000/api
 
-@menuid = 
+@menuid = 664286a57856ef04bf877212
 
-@eventid =
+@eventid = 66428984f41f820123ad7461
+
+@geteventid = 663186cf1ffbbff898dd9162
 
 ### GET Menu
 
-GET http//localhost:{{port}}/api/menu
+GET {{url}}/menu
 
 ### Create a Menu Item
 
-POST http//localhost:{{port}}/api/menu
+POST {{url}}/menu
+
+Content-Type: application/json
+
+{
+   "name" : "Footlong Dog",
+   "description" : "12 inch hotdog",
+   "price" : "$15.99"
+
+}
 
 ### Update menu item
 
-PUT http//localhost:{{port}}/api/menu/:{{menuid}}
+PUT {{url}}/menu/{{menuid}}
+
+Content-Type: application/json
+
+{
+   "name" : "brat",
+   "description" : "German Brat.",
+   "price" : "$17.99"
+
+}
 
 ### Delete menu item
 
-DELETE http//localhost:{{port}}/api/menu/:{{menuid}}
+DELETE {{url}}/menu/{{menuid}}
 
 ### GET Events
 
-GET http//localhost:{{port}}/api/events
+GET {{url}}/events
+
+
 
 ### GET Event by ID
 
-GET http//localhost:{{port}}/api/events/:{{eventid}}
+GET {{url}}/events/{{geteventid}}
 
 ### Create a Event 
 
-POST http//localhost:{{port}}/api/events
+POST {{url}}/events
+
+Content-Type: application/json
+
+{
+   "name" : "Party with hotdogs",
+   "location" : "Apppelton",
+   "date" : "2024-06-15",
+   "hours" : "1100-1700"
+}
 
 ### Delete an Event
 
-DELETE http//localhost:{{port}}/api/events/:{{eventid}}
+DELETE {{url}}/events/{{eventid}}
