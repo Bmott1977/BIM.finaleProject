@@ -16,7 +16,6 @@ GET {{url}}/menu
 ### Create a Menu Item
 
 POST {{url}}/menu
-
 Content-Type: application/json
 
 {
@@ -29,7 +28,6 @@ Content-Type: application/json
 ### Update menu item
 
 PUT {{url}}/menu/{{menuid}}
-
 Content-Type: application/json
 
 {
@@ -56,7 +54,6 @@ GET {{url}}/events/{{geteventid}}
 ### Create a Event 
 
 POST {{url}}/events
-
 Content-Type: application/json
 
 {
