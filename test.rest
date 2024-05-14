@@ -5,6 +5,8 @@
 
 @menuid = 664286a57856ef04bf877212
 
+@putmenuid = 6631854f1ffbbff898dd9160
+
 @eventid = 66428984f41f820123ad7461
 
 @geteventid = 663186cf1ffbbff898dd9162
@@ -27,7 +29,7 @@ Content-Type: application/json
 
 ### Update menu item
 
-PUT {{url}}/menu/{{menuid}}
+PUT {{url}}/menu/{{putmenuid}}
 Content-Type: application/json
 
 {
