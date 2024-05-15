@@ -13,10 +13,9 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.use(express.json())
-//app.use(express.static('public'))
-//uncomment when non-static endpoints are added
+app.use(express.static('public'))
 app.use('/api', apiRoutes)
-//app.use('/', require('./routes/static'))
+app.use('/', require('./routes/static'))
 
 
 
