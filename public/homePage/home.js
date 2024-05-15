@@ -1,29 +1,29 @@
 
 // commit out when fetch is working
-const eventInfo = [{
-    "name": "Charity",
-    "location": "Oshkosh",
-    "date": "4/30/2024",
-    "hours": "12pm - 5pm"
-},
-{
-    "name": "Charity",
-    "location": "Oshkosh",
-    "date": "4/30/2024",
-    "hours": "12pm - 5pm"
-}]
+// const eventInfo = [{
+//     "name": "Charity",
+//     "location": "Oshkosh",
+//     "date": "4/30/2024",
+//     "hours": "12pm - 5pm"
+// },
+// {
+//     "name": "Charity",
+//     "location": "Oshkosh",
+//     "date": "4/30/2024",
+//     "hours": "12pm - 5pm"
+// }]
 
 // commit out when fetch is working
-const fakefetch = (url) => {
-    if (url === '/api/events') {
-        return eventInfo
-    }
-}
+// const fakefetch = (url) => {
+//     if (url === '/api/events') {
+//         return eventInfo
+//     }
+// }
 
 //Modify when database is ready
 const generateEvents = async () => {
-    const response = await fakefetch('/api/events')
-    const {name, location, date, hours} = await response//.json()
+    const response = await fetch('/events')
+    const {name, location, date, hours} = await response.json()
 
     response.forEach(({name, location, date, hours}) => {
 

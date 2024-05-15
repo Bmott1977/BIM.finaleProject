@@ -4,10 +4,10 @@ const path = require('path')
 
 const router = express.Router()
 
-const root = path.join(__dirname, '..', 'public')
+const root = path.join(__dirname, '..', 'public', 'homePage')
 
 router.get('/', (request, response) => {
-    response.sendFile('./homePage/index.html', { root })
+    response.sendFile('index.html', { root })
 })
 
 module.exports = router
