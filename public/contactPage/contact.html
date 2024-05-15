@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"Frank's Flame Grill"</title>
-    <link rel="stylesheet" href="/BIM.finaleProject/public/styles.css">
-    <link rel="stylesheet" href="/BIM.finaleProject/public/layout.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/layout.css">
     <script src="contact.js" defer></script>
 </head>
 <body>
@@ -22,7 +22,10 @@
                 <li><a href="admin.html">Admin</a></li>
             </ul>
         </nav>
-    <h2>please join our news letter</h2>
+    <h2>Contact me</h2>
+    <div class="javacontact">
+                
+            </div>
     <section class="form">
         <form id="contact" method="post" action="submit.php">
             <br>
@@ -31,9 +34,7 @@
                 <label for="date"> Today's Date</label>
                 <input type="date" id="date" name="date">
             </p>
-            <div class="javacontact">
-                
-            </div>
+            
             <fieldset>
                 <legend>personal Info</legend>
                 <p>
@@ -56,10 +57,6 @@
                     <label for="zip">Zip Code:</label>
                     <input type="text" id="zip" name="zip">
                 </p>
-                <p>
-                    <label for="food">favorite type of food</label>
-                    <input type="text" id="food" name="food">
-                </p>
             </fieldset>
             <br>
             <fieldset>
@@ -73,15 +70,7 @@
                     check:
                     <input type="radio" name="pay" value="check">
                 </p>
-                <p>
-                    <label for="com">how many times do you go out a month</label>
-                    1-4
-                    <input type="checkbox" name="one-four" value="onefour">
-                    5-10
-                    <input type="checkbox" name="five-ten" value="fiveten">
-                    above 10
-                    <input type="checkbox" name="above" value="above10">
-                </p>
+              
                 <p>
                     <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email">

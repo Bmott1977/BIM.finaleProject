@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"Frank's Flame Grill"</title>
-    <link rel="stylesheet" href="/BIM.finaleProject/public/styles.css">
-    <link rel="stylesheet" href="/BIM.finaleProject/public/layout.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/layout.css">
     <script src="admin.js" defer></script>
 </head>
 <body>
@@ -22,75 +22,69 @@
                 <li><a href="admin.html">Admin</a></li>
             </ul>
         </nav>
-    <h2>please join our news letter</h2>
+    <h2>admin</h2>
     <section class="form">
         <form id="contact" method="post" action="submit.php">
             <br>
-            <p>
-                <label for="date"> Today's Date</label>
-                <input type="date" id="date" name="date">
-            </p>
             <fieldset>
-                <legend>personal Info</legend>
+                <legend>Menu</legend>
                 <p>
-                    <label for="Fname">First Name:</label>
-                    <input type="text" id="Fname" name="Fname" required placeholder="Type Your First Name">*
+                    <label for="Fname">Name:</label>
+                    <input type="text" id="Fname" name="Fname" required placeholder="Name of Item">*
                 </p>
                 <p>
-                    <label for="Lname">Last Name:</label>
-                    <input type="text" id="Lname" name="Lname" required placeholder="Type Your Last Name">*
+                    <label for="Lname">Price:</label>
+                    <input type="text" id="Lname" name="Lname" required placeholder="total Price">*
                 </p>
                 <p>
-                    <label for="street">Street Address:</label>
+                    <label for="street">description:</label>
                     <input type="text" id="street" name="street">
                 </p>
-                <p>
-                    <label for="state">State:</label>
-                    <input type="text" id="state" name="street">
-                </p>
-                <p>
-                    <label for="zip">Zip Code:</label>
-                    <input type="text" id="zip" name="zip">
-                </p>
-                <p>
-                    <label for="food">favorite type of food</label>
-                    <input type="text" id="food" name="food">
-                </p>
+                
             </fieldset>
             <br>
             <fieldset>
-                <legend>payment Info</legend>
-                <p>
-                    <label for="pay">payment preference for letter</label>
-                    card:
-                    <input type="radio" name="pay" value="card">
-                    paypal:
-                    <input type="radio" name="pay" value="paypal">
-                    check:
-                    <input type="radio" name="pay" value="check">
-                </p>
-                <p>
-                    <label for="com">how many times do you go out a month</label>
-                    1-4
-                    <input type="checkbox" name="one-four" value="onefour">
-                    5-10
-                    <input type="checkbox" name="five-ten" value="fiveten">
-                    above 10
-                    <input type="checkbox" name="above" value="above10">
-                </p>
-                <p>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email">
-                </p>
-                <p>
-                    * Required
-                </p>
-            </fieldset>
-            <p>
-                <input type="submit" value="Submit Your Form">
-            </p>
+            
+               
+                <input type="submit" value="Add">
+                <input type="submit" value="Delete">
+                <input type="submit" value="Update">
+            
            </form>
         </section> 
+        <section class="form">
+            <form id="contact" method="post" action="submit.php">
+                <br>
+                <fieldset>
+                    <legend>Events</legend>
+                    <p>
+                        <label for="Fname">Name:</label>
+                        <input type="text" id="Fname" name="Fname" required placeholder="Name of Event">*
+                    </p>
+                    <p>
+                        <label for="Lname">location:</label>
+                        <input type="text" id="Lname" name="Lname" required placeholder="Location of Event">*
+                    </p>
+                    <p>
+                        <label for="street">Date:</label>
+                        <input type="text" id="street" name="street">
+                    </p>
+                    <p>
+                        <label for="state">Hours:</label>
+                        <input type="text" id="state" name="street">
+                    </p>
+                    
+                </fieldset>
+                <br>
+                <fieldset>
+                
+                   
+                    <input type="submit" value="Add">
+                    <input type="submit" value="Delete">
+                    <input type="submit" value="Update">
+                
+               </form>
+            </section> 
         <footer>
             <p><small>&copy;2024 "Frank's Flame Grill"</small></p>
             <address><small>Have a question or comment about the site?<a href="Site-feedback.html">Contact our Web Team</a></small></address>
