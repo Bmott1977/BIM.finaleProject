@@ -24,10 +24,10 @@
 
 //Modify when database is ready
 const generateMenu = async () => {
-    const response = await fetch('/menu')
-    const {name, price, description} = await response.json()
+    const response = await fetch('/api/menu')
+    const body = await response.json()
 
-    response.forEach(({name, price, description}) => {
+    body.forEach(({name, price, description}) => {
 
         const ul = document.querySelector(' div .javamenu ul')
         const li = document.createElement('li')
