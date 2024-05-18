@@ -161,3 +161,4 @@ eventForm.addEventListener('submit'), (e) => {
           console.error('Error adding event:', error);
         });
       });
+      // commit
