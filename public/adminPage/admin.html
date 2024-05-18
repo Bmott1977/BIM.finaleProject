@@ -28,27 +28,31 @@
             <br>
             <fieldset>
                 <legend>Menu</legend>
-                <p>
-                    <label for="Fname">Name:</label>
-                    <input type="text" id="Fname" name="Fname" required placeholder="Name of Item">*
-                </p>
-                <p>
-                    <label for="Lname">Price:</label>
-                    <input type="text" id="Lname" name="Lname" required placeholder="total Price">*
-                </p>
-                <p>
-                    <label for="street">description:</label>
-                    <input type="text" id="street" name="street">
-                </p>
+                <h1>Update Menu</h1>
+                <form id="update-menu-form">
+                  <label for="menu-id">Menu ID:</label>
+                  <input type="text" id="menu-id" name="menu-id" required>
+                  <br>
+                  <label for="menu-name">Menu Name:</label>
+                  <input type="text" id="menu-name" name="menu-name" required>
+                  <br>
+                  <label for="menu-description">Menu Description:</label>
+                  <input type="text" id="menu-description" name="menu-description" required>
+                  <br>
+                  <label for="menu-price">Menu Price:</label>
+                  <input type="number" id="menu-price" name="menu-price" step="0.01" required>
+                  <br>
+                  <button type="submit">Update Menu</button>
+                  <button id="addMenuItemButton">Add Menu Item</button>
+                  <button id="deleteMenuItemButton">Delete Menu Item</button>
+                </form>
                 
             </fieldset>
             <br>
             <fieldset>
             
                
-                <input type="submit" value="Add">
-                <input type="submit" value="Delete">
-                <input type="submit" value="Update">
+                
             
            </form>
         </section> 
@@ -56,33 +60,44 @@
             <form id="contact" method="post" action="submit.php">
                 <br>
                 <fieldset>
+                    <table id="eventsTable">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Dates</th>
+                            <th>Hours</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                      
+                      
                     <legend>Events</legend>
-                    <p>
-                        <label for="Fname">Name:</label>
-                        <input type="text" id="Fname" name="Fname" required placeholder="Name of Event">*
-                    </p>
-                    <p>
-                        <label for="Lname">location:</label>
-                        <input type="text" id="Lname" name="Lname" required placeholder="Location of Event">*
-                    </p>
-                    <p>
-                        <label for="street">Date:</label>
-                        <input type="text" id="street" name="street">
-                    </p>
-                    <p>
-                        <label for="state">Hours:</label>
-                        <input type="text" id="state" name="street">
-                    </p>
+                    <input type="hidden" id="eventId" name="id">
                     
+                    <label for="eventName">Name:</label>
+                    
+                    <input type="text" id="eventName" name="name" required>
+                    <br>
+                    <label for="eventLocation">Location:</label>
+                    
+                    <input type="text" id="eventLocation" name="location" required>
+                    <br>
+                    <label for="eventDates">Dates:</label>
+                    
+                    <input type="text" id="eventDates" name="dates" required>
+                    <br>
+                    <label for="eventHours">Hours:</label>
+                    <input type="text" id="eventHours" name="hours" required>
+                    <button type="submit">Save</button>
                 </fieldset>
                 <br>
                 <fieldset>
-                
-                   
-                    <input type="submit" value="Add">
-                    <input type="submit" value="Delete">
-                    <input type="submit" value="Update">
-                
+                    <button id="updateEventButton">update Event</button>
+                    <button id="deletebutton">delete Event</button>
+                    <button id="appevent">app event</button>
                </form>
             </section> 
         <footer>
