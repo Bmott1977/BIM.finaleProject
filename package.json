@@ -10,9 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mongodb": "^6.6.1"
+    "mongodb": "^6.6.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bmott1977/BIM.finaleProject.git"

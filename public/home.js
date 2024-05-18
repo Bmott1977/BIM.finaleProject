@@ -22,10 +22,10 @@
 
 //Modify when database is ready
 const generateEvents = async () => {
-    const response = await fetch('/events')
-    const {name, location, date, hours} = await response.json()
+    const response = await fetch('/api/events')
+    const body = await response.json()
 
-    response.forEach(({name, location, date, hours}) => {
+    body.forEach(({name, location, dates, hours}) => {
 
         const ul = document.querySelector(' div .eventItems  ul')
         const li = document.createElement('li')
@@ -47,7 +47,7 @@ const generateEvents = async () => {
         su.textContent = name
         su.style.fontWeight = 'bold'
         h4.textContent = location
-        p.textContent = date
+        p.textContent = dates
         p2.textContent = hours
     });
 
